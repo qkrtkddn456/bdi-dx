@@ -31,13 +31,13 @@ public class UTDAOImpl implements UTDAO {
 	@Override
 	public int insertUT(UT ut) {
 		// TODO Auto-generated method stub
-		return ss.insert("com.bdi.sp.UTMapper.insertUT");
+		return ss.insert("com.bdi.sp.UTMapper.insertUT",ut);
 	}
 
 	@Override
-	public int updateUT(UT ut, int utnum) {
+	public int updateUT(UT ut) {
 		// TODO Auto-generated method stub
-		return ss.update("com.bdi.sp.UTMapper.updateUT",utnum);
+		return ss.update("com.bdi.sp.UTMapper.updateUT",ut);
 	}
 
 	@Override

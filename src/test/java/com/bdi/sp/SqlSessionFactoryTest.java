@@ -41,8 +41,13 @@ public class SqlSessionFactoryTest {
 		Map<String,String> ok = new HashMap<String,String>();
 		ok.put("utid", "test");
 		ok.put("utpwd", "test");
-		UT uList = ss.selectOne("com.bdi.sp.UTMapper.loginUT", ok);
-		System.out.println(uList);
+		
+		UT ut = new UT();
+		ut.setUtnum(1);
+		ut.setUtid("test2");
+		ut.setUtpwd("test2");
+		ut.setUtname("test1");
+		System.out.println(ss.delete("com.bdi.sp.UTMapper.deleteUT",2));
 	}
 
 }

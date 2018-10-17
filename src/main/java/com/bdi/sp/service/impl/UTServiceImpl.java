@@ -38,7 +38,8 @@ public class UTServiceImpl implements UTService {
 	@Override
 	public int updateUT(UT ut, int utnum) {
 		// TODO Auto-generated method stub
-		return udao.updateUT(ut, utnum);
+		ut.setUtnum(utnum);
+		return udao.updateUT(ut);
 	}
 
 	@Override

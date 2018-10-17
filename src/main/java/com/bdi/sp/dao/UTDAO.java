@@ -10,7 +10,7 @@ public interface UTDAO {
 	public List<UT> getUTList(UT ut);
 	public UT getUT(int utnum);
 	public int insertUT(UT ut);
-	public int updateUT(UT ut,int utnum);
+	public int updateUT(UT ut);
 	public int deleteUT(int utnum);
 	public UT loginUT(Map<String,String> ut);
 }
