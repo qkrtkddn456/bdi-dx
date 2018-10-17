@@ -8,7 +8,7 @@
 <h1>
 	Hello world!  
 </h1>
-
+<!-- 박상우 -->
 <P>  The time on the server is ${serverTime}. </P>
 ${jList}
 </body>
