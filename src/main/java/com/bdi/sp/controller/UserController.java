@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class UserController {
 
-	@RequestMapping(value="/login",method=RequestMethod.POST)
+	@RequestMapping(value="/loginasdf",method=RequestMethod.POST)
 	public @ResponseBody Map<String,String> login(@RequestBody Map<String,String> user){
 		Map<String,String> rMap = new HashMap<String,String>();
 		rMap.put("login", "fail");
