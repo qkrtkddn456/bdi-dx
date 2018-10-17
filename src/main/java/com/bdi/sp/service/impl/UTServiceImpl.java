@@ -55,8 +55,8 @@ public class UTServiceImpl implements UTService {
 		if(ut.get("utid")==null) {
 			return rMap;
 		}
-		if(ut.get("utid").equals(1)) {
-			if(ut.get("utpwd").equals(1)) {
+		if(ut.get("utid").equals(udao.loginUT(ut).getUtid())) {
+			if(ut.get("utpwd").equals(udao.loginUT(ut).getUtpwd())) {
 				rMap.put("login", "success");
 				rMap.put("msg", "로그인 되었습니다");
 			}

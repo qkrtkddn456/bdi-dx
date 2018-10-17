@@ -35,7 +35,7 @@
 		delete from user_table
 		where utnum=#{utnum}
 	</delete>
-	<select id="loginUT" resultType="String">
+	<select id="loginUT" resultType="com.bdi.sp.vo.UT">
 		select utid,utpwd from user_table
 		where utid=#{utid} and utpwd=#{utpwd}
 	</select>

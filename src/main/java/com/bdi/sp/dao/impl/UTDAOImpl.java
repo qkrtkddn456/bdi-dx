@@ -1,6 +1,7 @@
 package com.bdi.sp.dao.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,12 @@ public class UTDAOImpl implements UTDAO {
 	public int deleteUT(int utnum) {
 		// TODO Auto-generated method stub
 		return ss.delete("com.bdi.sp.UTMapper.deleteUT",utnum);
+	}
+
+	@Override
+	public UT loginUT(Map<String, String> ut) {
+		// TODO Auto-generated method stub
+		return ss.selectOne("com.bdi.sp.UTMapper.loginUT", ut);
 	}
 
 }
