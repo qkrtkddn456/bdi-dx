@@ -39,8 +39,8 @@ public class SqlSessionFactoryTest {
 	@Test
 	public void ssTest() {
 		
-		List<Japan> jList = ss.selectList("com.bdi.sp.JapanMapper.selectJapanList");
-		assertEquals(jList.size(), 3);
+		List<Japan> jList = ss.selectOne("com.bdi.sp.UTMapper.loginUT");
+		assertEquals(jList.size(), 1);
 	}
 
 }
