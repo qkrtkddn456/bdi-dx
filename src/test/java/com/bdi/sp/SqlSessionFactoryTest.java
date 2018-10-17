@@ -1,9 +1,9 @@
 package com.bdi.sp;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.bdi.sp.vo.Japan;
+import com.bdi.sp.vo.UT;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -38,9 +38,16 @@ public class SqlSessionFactoryTest {
 	
 	@Test
 	public void ssTest() {
+		Map<String,String> ok = new HashMap<String,String>();
+		ok.put("utid", "test");
+		ok.put("utpwd", "test");
 		
-		List<Japan> jList = ss.selectList("com.bdi.sp.JapanMapper.selectJapanList");
-		assertEquals(jList.size(), 3);
+		UT ut = new UT();
+		ut.setUtnum(1);
+		ut.setUtid("test2");
+		ut.setUtpwd("test2");
+		ut.setUtname("test1");
+		System.out.println(ss.delete("com.bdi.sp.UTMapper.deleteUT",2));
 	}
 
 }
