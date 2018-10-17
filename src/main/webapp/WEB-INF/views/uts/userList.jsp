@@ -22,7 +22,7 @@
 		au.send({url:'/uts',success:function(res){
 			res = JSON.parse(res);
 			dxGrid.parse(res,'js');
-		}});
+		}}); 
 	}
 	window.addEventListener('load',doInit);
 </script>
