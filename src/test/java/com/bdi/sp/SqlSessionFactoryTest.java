@@ -44,10 +44,10 @@ public class SqlSessionFactoryTest {
 		
 		UT ut = new UT();
 		ut.setUtnum(1);
-		ut.setUtid("test2");
+		ut.setUtid("test");
 		ut.setUtpwd("test2");
 		ut.setUtname("test1");
-		System.out.println(ss.delete("com.bdi.sp.UTMapper.deleteUT",2));
+		System.out.println(ss.insert("com.bdi.sp.UTMapper.insertUT",ut));
 	}
 
 }
