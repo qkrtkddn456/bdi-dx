@@ -30,9 +30,16 @@ public class UTServiceImpl implements UTService {
 	}
 
 	@Override
-	public int insertUT(UT ut) {
+	public Map<String,String> insertUT(UT ut) {
 		// TODO Auto-generated method stub
-		return udao.insertUT(ut);
+		Map<String,String> rMap = new HashMap<String,String>();
+		rMap.put("insert", "fail");
+		rMap.put("msg", "아이디가 중복되었습니다");
+		if(udao.insertUT(ut)==1) {
+			rMap.put("insert", "success");
+			rMap.put("msg", "회원가입이 완료되었습니다");
+		}
+		return rMap;
 	}
 
 	@Override

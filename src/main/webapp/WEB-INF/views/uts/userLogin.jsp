@@ -12,8 +12,8 @@
 	var loginFormData = [
 		 {type:'fieldset',name:'login',label:'login',inputWidth:'auto',
 			list:[
-				{type:'input',name:'id',label:'ID',validate:'ValidAplhaNumeric',required:true},
-				{type:'password',name:'pwd',label:'PWD',validate:'ValidAplhaNumeric',required:true},
+				{type:'input',name:'utid',label:'ID',validate:'ValidAplhaNumeric',required:true},
+				{type:'password',name:'utpwd',label:'PWD',validate:'ValidAplhaNumeric',required:true},
 				{type:'button',name:'loginbtn',value:'LOGIN'}
 			]
 		 }
