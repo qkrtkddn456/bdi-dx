@@ -10,14 +10,13 @@
 
 <body>
 <script>
-	var dxGrid;
+	var dxGrid,dxForm;
 	function doInit(){
 		dxGrid = new dhtmlXGridObject('dxGrid'); 
 		
-	
 		dxGrid.setImagePath('${gridPath}');
-		dxGrid.setHeader('번호,아이디,비밀번호,이름,주소,성별,취미,생년월일,추천인,내용,수정및탈퇴');
-		dxGrid.setColumnIds('utnum,utid,utpwd,utname,utadd,utgd,uthb,utbd,utrd,utdesc,utut');
+		dxGrid.setHeader('번호,아이디,비밀번호,이름,주소,성별,취미,생년월일,추천인,내용');
+		dxGrid.setColumnIds('utnum,utid,utpwd,utname,utadd,utgd,uthb,utbd,utrd,utdesc');
 		dxGrid.setColTypes('ro,ed,ed,ed,ed,ed,ed,ed,ro,ed');
 		dxGrid.init();
 		au.send({url:'/uts',success:function(res){
@@ -28,7 +27,6 @@
 	window.addEventListener('load',doInit);
 </script>
 <body>
-	
-	<div id="dxGrid" style="width:100%;height:100%"></div>
+	<div id="dxGrid" style="width:70%;height:70%"></div>
 </body>
 </html>
