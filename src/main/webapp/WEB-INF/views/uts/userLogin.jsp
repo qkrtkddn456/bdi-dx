@@ -27,7 +27,7 @@
 	 var loginForm = new dhtmlXForm('loginForm',loginFormData);
 	 utsWin.window('w1').attachObject('loginForm');
 	 loginForm.attachEvent('onButtonClick',function(name){
-		 if(name=='loginbtn'){  
+		 if(name=='loginbtn'){   
 			if(loginForm.validate()){
 				 var id = loginForm.getItemValue('id');
 				 var pwd = loginForm.getItemValue('pwd');
