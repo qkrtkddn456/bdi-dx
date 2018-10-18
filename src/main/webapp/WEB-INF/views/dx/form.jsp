@@ -12,9 +12,9 @@
 		 {type:'fieldset',name:'login',label:'login',inputWidth:'auto',
 			list:[
 				{type:'input',name:'id',label:'ID',validate:'ValidAplhaNumeric',required:true},
-				{type:'password',name:'pwd',label:'PWD',validate:'V	alidAplhaNumeric',required:true},
+				{type:'password',name:'pwd',label:'PWD',validate:'ValidAplhaNumeric',required:true},
 				{type:'button',name:'loginbtn',value:'LOGIN'}
-			]	 
+			]	
 		 }
 	 ];
 	 function doInit(){
