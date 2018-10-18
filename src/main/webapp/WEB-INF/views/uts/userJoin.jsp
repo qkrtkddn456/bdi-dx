@@ -50,8 +50,8 @@ function join(){
 			 var hobby = dxForm.getItemValue('hobby');
 			 var Recommender = dxForm.getItemValue('Recommender');
 			 var desc = dxForm.getItemValue('desc');
-			 var conf = JSON.stringify({id:id,pwd:pwd,name:name,address:address,birthday:birthday,gender:gender,hobby:hobby,Recommender:Recommender,desc:desc});
-			/* var conf = {
+			 
+			 var conf = {
 					url:'/uts',
 					 method:'POST',
 					 param : JSON.stringify({id:id,pwd:pwd,name:name,address:address,birthday:birthday,gender:gender,hobby:hobby,Recommender:Recommender,desc:desc}),
@@ -59,8 +59,8 @@ function join(){
 						 res = JSON.parse(res);
 						 alert(res.msg);
 						}
-			} */
-			 alert(conf);
+			} 
+			 au.send(conf);
 		  
 
 	});
