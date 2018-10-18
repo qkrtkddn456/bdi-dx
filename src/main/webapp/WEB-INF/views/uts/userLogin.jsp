@@ -30,12 +30,12 @@
 	 loginForm.attachEvent('onButtonClick',function(name){
 		 if(name=='loginbtn'){
 			if(loginForm.validate()){
-				 var id = loginForm.getItemValue('utid');
-				 var pwd = loginForm.getItemValue('utpwd');
+				 var utid = loginForm.getItemValue('utid');
+				 var utpwd = loginForm.getItemValue('utpwd');
 				 var conf = {
 						 url:'/login',
 						 method:'POST',
-						 param : JSON.stringify({utid:id,utpwd:pwd}),
+						 param : JSON.stringify({utid:utid,utpwd:utpwd}),
 						 success : function(res){
 							 res = JSON.parse(res);
 							 alert(res.msg);
