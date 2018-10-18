@@ -7,8 +7,6 @@
 	<title>스프링테스트</title>
 <link rel="stylesheet" type="text/css" href="${resPath}/dhtmlx/skins/skyblue/dhtmlx.css"/>
 </head>
-
-<body>
 <script>
 	var dxGrid;
 	function doInit(){
