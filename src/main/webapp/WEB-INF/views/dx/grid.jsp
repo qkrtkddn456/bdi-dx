@@ -16,7 +16,8 @@
 		dxGrid.setColTypes('ro,ed,ed');
 		dxGrid.init();
 		var data = [
-			{num:1,name:'홍길동',id:'hong'}
+			{num:1,name:'홍길동',id:'hong'},
+			{num:2,name:'홍동',id:'hog'}
 		]
 		dxGrid.parse(data,'js');
 	}
