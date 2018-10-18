@@ -32,8 +32,14 @@ function join(){
 			{type:'button',value:'가입',name:'btn'}   
 		]}]
 	var dxForm = new dhtmlXForm('dxForm',forms);
+	var hb;
 	dxForm.attachEvent('onButtonClick',function(){
-			
+			for(var i=0;i<4;i++){
+				if(dxForm.hobby[i].checked==true){
+					hb += dxForm.hobby[i].value;
+				}
+				
+			}
 
 			 var id = dxForm.getItemValue('id');
 			 var pwd = dxForm.getItemValue('pwd');

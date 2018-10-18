@@ -33,7 +33,7 @@
 				 var id = loginForm.getItemValue('utid');
 				 var pwd = loginForm.getItemValue('utpwd');
 				 var conf = {
-						 url:'/uts',
+						 url:'/login',
 						 method:'POST',
 						 param : JSON.stringify({utid:id,utpwd:pwd}),
 						 success : function(res){

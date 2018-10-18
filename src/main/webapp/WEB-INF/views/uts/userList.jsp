@@ -10,7 +10,7 @@
 
 <body>
 <script>
-	var dxGrid;
+	var dxGrid,dxForm;
 	function doInit(){
 		dxGrid = new dhtmlXGridObject('dxGrid'); 
 		
@@ -27,6 +27,6 @@
 	window.addEventListener('load',doInit);
 </script>
 <body>
-	<div id="dxGrid" style="width:100%;height:100%"></div>
+	<div id="dxGrid" style="width:70%;height:70%"></div>
 </body>
 </html>
