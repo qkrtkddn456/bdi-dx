@@ -9,7 +9,7 @@
 </head>
 <script>
 	var dxGrid;
-	function doInit(){
+	function doInit(){ 
 		dxGrid = new dhtmlXGridObject('dxGrid'); 
 		
 		dxGrid.setImagePath('${gridPath}');

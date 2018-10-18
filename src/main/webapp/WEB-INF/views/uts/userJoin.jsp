@@ -29,7 +29,7 @@ function join(){
 				]},
 			{type:'input',name:'Recommender',label:'추천인',},
 			{type:'input',name:'desc',label:'비고',},
-			{type:'button',value:'가입',name:'btn'}
+			{type:'button',value:'가입',name:'btn'} 
 		]}]
 	var dxForm = new dhtmlXForm('dxForm',forms);
 	dxForm.attachEvent('onButtonClick',function(){
