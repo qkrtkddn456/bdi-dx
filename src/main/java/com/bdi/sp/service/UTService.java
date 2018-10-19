@@ -8,7 +8,7 @@ import com.bdi.sp.vo.UT;
 public interface UTService {
 
 	public List<UT> getUTList(UT ut);
-	public UT getUT(Integer utnum);
+	public UT getUT(Integer utid);
 	public Map<String,String> insertUT(UT ut);
 	public int updateUT(UT ut, int utnum);
 	public int delete(int utnum);

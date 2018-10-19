@@ -23,9 +23,9 @@ public class UTDAOImpl implements UTDAO {
 	}
 
 	@Override
-	public UT getUT(int utnum) {
+	public UT getUT(int utid) {
 		// TODO Auto-generated method stub
-		return ss.selectOne("com.bdi.sp.UTMapper.selectUT",utnum);
+		return ss.selectOne("com.bdi.sp.UTMapper.selectUT",utid);
 	}
 
 	@Override

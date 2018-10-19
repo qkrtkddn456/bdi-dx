@@ -13,8 +13,15 @@
 <script>
 var dxForm;
 function join(){
-
-	
+	var conf = {
+			url:'/uts/',
+			 method:'GET',
+			 param : JSON.stringify({utid,utpwd,utname,utadd,utbd,utgd,uthb,utrer,utdesc}),
+			 success : function(res){
+				 res = JSON.parse(res);
+			 }
+	}
+	au.send(conf);
 	var forms = [
 		{type:'fieldset', name:'join',label:'회원가입',inputWidth:'auto',list:[
 			{type:'input',name:'id',label:'아이디',value:'${utid}',required:true},
@@ -32,6 +39,7 @@ function join(){
 			{type:'button',value:'수정',name:'btnup'},
 			{type:'button',value:'삭제',name:'btndel'}
 		]}]
+	
 	var dxForm = new dhtmlXForm('dxForm',forms);
 	dxForm.attachEvent('onButtonClick',function(name){
 			if(name==btnup){
@@ -64,11 +72,7 @@ function join(){
 					 res = JSON.parse(res);
 				}}
 			}
-			
-			 
-
 	});
-	
 }
 window.addEventListener('load',join);
 </script>

@@ -24,9 +24,9 @@ public class UTServiceImpl implements UTService {
 	}
 
 	@Override
-	public UT getUT(Integer utnum) {
+	public UT getUT(Integer utid) {
 		// TODO Auto-generated method stub
-		return udao.getUT(utnum);
+		return udao.getUT(utid);
 	}
 
 	@Override

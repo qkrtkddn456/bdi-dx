@@ -8,7 +8,7 @@ import com.bdi.sp.vo.UT;
 public interface UTDAO {
 
 	public List<UT> getUTList(UT ut);
-	public UT getUT(int utnum);
+	public UT getUT(int utid);
 	public int insertUT(UT ut);
 	public int updateUT(UT ut);
 	public int deleteUT(int utnum);

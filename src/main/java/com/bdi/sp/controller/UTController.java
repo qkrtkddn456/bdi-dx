@@ -1,6 +1,5 @@
 package com.bdi.sp.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,9 +30,10 @@ public class UTController {
 	public @ResponseBody List<UT> utList(@ModelAttribute UT ut){
 		return us.getUTList(ut);
 	}
-	@RequestMapping(value="/uts/{utnum}",method=RequestMethod.GET)
-	public @ResponseBody UT ut(@PathVariable Integer utnum) {
-		return us.getUT(utnum);
+	@RequestMapping(value="/uts/{utid}",method=RequestMethod.GET)
+	public String ut(@PathVariable Integer utid,Model ut) {
+		ut.addAttribute("ut",us.getUT(utid));
+		return "/uts/userGET";
 	}
 	@RequestMapping(value="/uts",method=RequestMethod.POST)
 	public @ResponseBody Map<String,String> insertUT(@RequestBody UT ut) {

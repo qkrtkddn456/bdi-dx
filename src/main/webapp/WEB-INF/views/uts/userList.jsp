@@ -14,7 +14,7 @@
 		dxGrid = new dhtmlXGridObject('dxGrid');
 		dxGrid.setImagePath('${gridPath}');
 		dxGrid.setHeader('번호,아이디,비밀번호,이름,주소,성별,취미,생년월일,추천인,내용');
-		dxGrid.setColumnIds('utnum,utid,utpwd,utname,utadd,utgd,uthb,utbd,utrd,utdesc');
+		dxGrid.setColumnIds('utnum,utid,utpwd,utname,utadd,utgd,uthb,utbd,utre,utdesc');
 		dxGrid.setColTypes('ro,ed,ed,ed,ed,ed,ed,ed,ro,ed');
 		dxGrid.init();
 		au.send({url:'/uts',success:function(res){
