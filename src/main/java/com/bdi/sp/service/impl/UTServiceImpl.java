@@ -35,8 +35,6 @@ public class UTServiceImpl implements UTService {
 		Map<String,String> rMap = new HashMap<String,String>();
 		rMap.put("insert", "fail");
 		rMap.put("msg", "아이디가 중복되었습니다");
-		Map<String,String> utid = new HashMap<String,String>();
-		utid.put("utid", ut.getUtid());
 		if(udao.idcheck(ut.getUtid()) == null) {
 			udao.insertUT(ut);
 			rMap.put("insert", "success");
@@ -69,6 +67,7 @@ public class UTServiceImpl implements UTService {
 		if(udao.loginUT(ut)!=null) {
 			rMap.put("login", "success");
 			rMap.put("msg", "로그인 되었습니다");
+			rMap.put("utnum", udao.loginUT(ut).getUtnum()+"");
 		}
 		return rMap;
 	}

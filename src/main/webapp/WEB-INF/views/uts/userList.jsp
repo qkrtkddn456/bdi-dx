@@ -68,14 +68,18 @@ document.querySelector("#update").addEventListener("click", update);
 document.querySelector("#del").addEventListener("click", del);
 document.querySelector("#login").addEventListener("click", login);
 document.querySelector("#join").addEventListener("click", join);
-var dxWin;
-function login(){
-	 if(!dxWin){
+var dxWin,jWin;
+function login(){ 
+	 if(!dxWin || !dxWin.window('w1')){
 		 dxWin = new dhtmlXWindows();
 		 dxWin.createWindow('w1',0,10,250,230);
 		 dxWin.window('w1').centerOnScreen();
 		 var loginForm = new dhtmlXForm('loginForm',loginFormData);
 		 dxWin.window('w1').attachObject('loginForm');
+		 dxWin.window('w1').attachEvent("onClose", function(win){
+			 win.hide();
+			 return;
+		 });
 		 loginForm.attachEvent('onButtonClick',function(name){
 			 if(name=='loginbtn'){
 				if(loginForm.validate()){
@@ -87,23 +91,33 @@ function login(){
 							 param : JSON.stringify({utid:id,utpwd:pwd}),
 							 success : function(res){
 								 res = JSON.parse(res);
-								 alert(res.msg);
-								 lo
+								 if(res.login=='fail'){
+									 alert(res.msg);
+								 }else{
+									 alert(res.msg); 
+									 location.href='/userGET/' + res.utnum;
+								 }
 							 }
 					 }
 					 au.send(conf);
 				 }
 			 }
 		 });
+	 }else{
+		 dxWin.window('w1').show();
 	 }
  }
 function join(){
-	 if(!dxWin){
-		 dxWin = new dhtmlXWindows();
-		 dxWin.createWindow('w1',0,10,300,480);
-		 dxWin.window('w1').centerOnScreen();
+	 if(!jWin){
+		 jWin = new dhtmlXWindows();
+		 jWin.createWindow('w2',0,10,300,480);
+		 jWin.window('w2').centerOnScreen();
 		 var joinForm = new dhtmlXForm('joinForm',joinFormData);
-		 dxWin.window('w1').attachObject('joinForm');
+		 jWin.window('w2').attachObject('joinForm');
+		 jWin.window('w2').attachEvent("onClose", function(win){
+			 win.hide();
+			 return;
+		 });
 		 joinForm.attachEvent('onButtonClick',function(name){
 			 if(name=='joinbtn'){
 				if(joinForm.validate()){
@@ -125,6 +139,7 @@ function join(){
 							 success : function(res){
 								 res = JSON.parse(res);
 								 alert(res.msg);
+								 doInit();	
 							}
 					 	} 
 					 	au.send(conf);
@@ -134,6 +149,8 @@ function join(){
 				 }
 			 }
 		 })
+	 }else{
+		 jWin.window('w2').show();
 	 }
 }
  

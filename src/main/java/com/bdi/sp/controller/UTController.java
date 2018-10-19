@@ -30,7 +30,7 @@ public class UTController {
 	public @ResponseBody List<UT> utList(@ModelAttribute UT ut){
 		return us.getUTList(ut);
 	}
-	@RequestMapping(value="/uts/{utnum}",method=RequestMethod.GET)
+	@RequestMapping(value="/userGET/{utnum}",method=RequestMethod.GET)
 	public @ResponseBody UT ut(@PathVariable Integer utnum) {
 		return us.getUT(utnum);
 	}
