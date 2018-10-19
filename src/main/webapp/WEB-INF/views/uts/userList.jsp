@@ -40,7 +40,7 @@ document.getElementByName("delete").addEventListener("click", del);
 
 function update(){
 	au.send({url:'/uts',success:function(res){
-		res = JSON.parse(res);
+		res = JSON.parse(res); 
 		dxGrid.parse(res,'js');
 	}});
 }
