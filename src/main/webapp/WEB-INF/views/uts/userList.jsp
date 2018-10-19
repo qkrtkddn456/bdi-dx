@@ -33,6 +33,7 @@
 	<button name="del">삭제</button>
 	<button name="join">회원가입</button>
 	<button name="login">로그인</button>
+	
 </body>
 <script>
 document.getElementByName("update").addEventListener("click", update);
