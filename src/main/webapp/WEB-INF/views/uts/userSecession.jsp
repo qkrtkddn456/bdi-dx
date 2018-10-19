@@ -11,20 +11,21 @@
 var dxForm;
 function join(){
 
+	
 	var forms = [
 		{type:'fieldset', name:'join',label:'회원가입',inputWidth:'auto',list:[
-			{type:'input',name:'id',label:'아이디',value:'${uts.utid}',required:true},
-			{type:'password',name:'pwd',label:'비밀번호',value:'${uts.utpwd}',required:true},
-			{type:'password',name:'pwdcheck',label:'비밀번호확인',value:'${uts.utpwd}',required:true},
-			{type:'input',name:'name',label:'이름',value:'${uts.utname}',required:true},
-			{type:'input',name:'address',label:'주소',value:'${uts.utadd}',required:true},
-			{type:'calendar',name:'birthday',label:'생년월일',weekStart:'7',serverDateFormat:'yyyy-mm-dd',value:'${uts.utbd}',required:true},
+			{type:'input',name:'id',label:'아이디',value:'${utid}',required:true},
+			{type:'password',name:'pwd',label:'비밀번호',value:'${utpwd}',required:true},
+			{type:'password',name:'pwdcheck',label:'비밀번호확인',value:'${utpwd}',required:true},
+			{type:'input',name:'name',label:'이름',value:'${utname}',required:true},
+			{type:'input',name:'address',label:'주소',value:'${utadd}',required:true},
+			{type:'calendar',name:'birthday',label:'생년월일',weekStart:'7',serverDateFormat:'yyyy-mm-dd',value:'${utbd}',required:true},
 			{type:'label',label:'성별',list:[
 				{type:'radio',name:'gender',label:'남자',},
 				{type:'radio',name:'gender',label:'여자',}]},
-			{type:'input',name:'hobby',value:'${uts.hb}',label:'취미'},
-			{type:'input',name:'Recommender',value:'${uts.utrd}',label:'추천인',},
-			{type:'input',name:'desc',value:'${uts.utdesc}',label:'비고',},
+			{type:'input',name:'hobby',value:'${hb}',label:'취미'},
+			{type:'input',name:'Recommender',value:'${utrd}',label:'추천인',},
+			{type:'input',name:'desc',value:'${utdesc}',label:'비고',},
 			{type:'button',value:'수정',name:'btnup'},
 			{type:'button',value:'삭제',name:'btndel'}
 		]}]
@@ -50,7 +51,7 @@ function join(){
 							 res = JSON.parse(res);
 							 alert(res.msg);
 						}
-				 	} 
+				 	}
 				 	au.send(conf);
 				}else{
 					alert("비밀번호 체크를 확인해주세요");
