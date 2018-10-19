@@ -30,10 +30,9 @@ public class UTController {
 	public @ResponseBody List<UT> utList(@ModelAttribute UT ut){
 		return us.getUTList(ut);
 	}
-	@RequestMapping(value="/uts/{utid}",method=RequestMethod.GET)
-	public String ut(@PathVariable Integer utid,Model ut) {
-		ut.addAttribute("ut",us.getUT(utid));
-		return "/uts/userGET";
+	@RequestMapping(value="/userGET/{utnum}",method=RequestMethod.GET)
+	public @ResponseBody UT ut(@PathVariable Integer utnum) {
+		return us.getUT(utnum);
 	}
 	@RequestMapping(value="/uts",method=RequestMethod.POST)
 	public @ResponseBody Map<String,String> insertUT(@RequestBody UT ut) {

@@ -52,4 +52,10 @@ public class UTDAOImpl implements UTDAO {
 		return ss.selectOne("com.bdi.sp.UTMapper.loginUT", ut);
 	}
 
+	@Override
+	public String idcheck(String utid) {
+		// TODO Auto-generated method stub
+		return ss.selectOne("com.bdi.sp.UTMapper.idcheck",utid);
+	}
+
 }

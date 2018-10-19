@@ -13,4 +13,5 @@ public interface UTDAO {
 	public int updateUT(UT ut);
 	public int deleteUT(int utnum);
 	public UT loginUT(Map<String,String> ut);
+	public String idcheck(String utid);
 }

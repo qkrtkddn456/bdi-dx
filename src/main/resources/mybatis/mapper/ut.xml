@@ -36,7 +36,11 @@
 		where utnum=#{utnum}
 	</delete>
 	<select id="loginUT" resultType="com.bdi.sp.vo.UT">
-		select utid,utpwd from user_table
+		select utid,utpwd,utnum from user_table
 		where utid=#{utid} and utpwd=#{utpwd}
+	</select>
+	<select id="idcheck" resultType="String" parameterType="String">
+		select utid from user_table
+		where utid = #{utid}
 	</select>
 </mapper>

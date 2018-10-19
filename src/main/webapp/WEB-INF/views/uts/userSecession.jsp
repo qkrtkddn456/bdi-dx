@@ -13,7 +13,8 @@
 <script>
 var dxForm;
 function join(){
-	 
+
+	
 	var forms = [
 		{type:'fieldset', name:'join',label:'회원가입',inputWidth:'auto',list:[
 			{type:'input',name:'id',label:'아이디',value:'${utid}',required:true},
@@ -26,12 +27,11 @@ function join(){
 				{type:'radio',name:'gender',label:'남자',},
 				{type:'radio',name:'gender',label:'여자',}]},
 			{type:'input',name:'hobby',value:'${hb}',label:'취미'},
-			{type:'input',name:'Recommender',value:'${utrd}',label:'추천인'},
+			{type:'input',name:'Recommender',value:'${utrd}',label:'추천인',},
 			{type:'input',name:'desc',value:'${utdesc}',label:'비고',},
 			{type:'button',value:'수정',name:'btnup'},
 			{type:'button',value:'삭제',name:'btndel'}
 		]}]
-	
 	var dxForm = new dhtmlXForm('dxForm',forms);
 	dxForm.attachEvent('onButtonClick',function(name){
 			if(name==btnup){
@@ -64,7 +64,11 @@ function join(){
 					 res = JSON.parse(res);
 				}}
 			}
+			
+			 
+
 	});
+	
 }
 window.addEventListener('load',join);
 </script>
