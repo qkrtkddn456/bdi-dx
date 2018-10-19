@@ -36,6 +36,7 @@
 	<button id="join">회원가입</button>
 	<button id="login">로그인</button>
 	<div id="loginForm" style="width:200px;height:200px"></div>
+	<div id="joinForm" style="width:400px;height:500px"></div>
 </body>
 <script>
 var loginFormData = [
@@ -47,9 +48,26 @@ var loginFormData = [
 		]
 	 }
 ];
+var joinFormData = [
+	{type:'fieldset', name:'join',label:'회원가입',inputWidth:'auto',list:[
+		{type:'input',name:'id',label:'아이디',required:true},
+		{type:'password',name:'pwd',label:'비밀번호',required:true},
+		{type:'password',name:'pwdcheck',label:'비밀번호확인',required:true},
+		{type:'input',name:'name',label:'이름',required:true},
+		{type:'input',name:'address',label:'주소',required:true},
+		{type:'calendar',name:'birthday',label:'생년월일',weekStart:'7',calendarDateFormat:'%Y%m%d',required:true},
+		{type:'label',label:'성별',list:[
+			{type:'radio',name:'gender',value:'1',label:'남자',checked:true},
+			{type:'radio',name:'gender',value:'2',label:'여자'}]},
+		{type:'input',name:'hobby',label:'취미'},
+		{type:'input',name:'Recommender',label:'추천인',},
+		{type:'input',name:'desc',label:'비고',},
+		{type:'button',value:'가입',name:'joinbtn'}   
+	]}];
 document.querySelector("#update").addEventListener("click", update);
 document.querySelector("#del").addEventListener("click", del);
 document.querySelector("#login").addEventListener("click", login);
+document.querySelector("#join").addEventListener("click", join);
 var dxWin;
 function login(){
 	 if(!dxWin){
@@ -79,6 +97,46 @@ function login(){
 		 });
 	 }
  }
+function join(){
+	 if(!dxWin){
+		 dxWin = new dhtmlXWindows();
+		 dxWin.createWindow('w1',0,10,300,480);
+		 dxWin.window('w1').centerOnScreen();
+		 var joinForm = new dhtmlXForm('joinForm',joinFormData);
+		 dxWin.window('w1').attachObject('joinForm');
+		 joinForm.attachEvent('onButtonClick',function(name){
+			 if(name=='joinbtn'){
+				if(joinForm.validate()){
+					 var id = joinForm.getItemValue('id');
+					 var pwd = joinForm.getItemValue('pwd');
+					 var pwdcheck =  joinForm.getItemValue('pwdcheck');
+					 var name = joinForm.getItemValue('name');
+					 var address = joinForm.getItemValue('address');
+					 var birthday = joinForm.getCalendar('birthday').getFormatedDate('%Y%m%d');
+					 var gender = joinForm.getItemValue('gender');
+					 var hobby = joinForm.getItemValue('hobby');
+					 var Recommender = joinForm.getItemValue('Recommender');
+					 var desc = joinForm.getItemValue('desc');
+					 if(pwd==pwdcheck){
+					 	var conf = {
+							url:'/uts',
+							 method:'POST',
+							 param : JSON.stringify({utid:id,utpwd:pwd,utname:name,utadd:address,utbd:birthday,utgd:gender,uthb:hobby,utre:Recommender,utdesc:desc}),
+							 success : function(res){
+								 res = JSON.parse(res);
+								 alert(res.msg);
+							}
+					 	} 
+					 	au.send(conf);
+					}else{
+						alert("비밀번호 체크를 확인해주세요");
+					}
+				 }
+			 }
+		 })
+	 }
+}
+ 
 function getuser(){
 	location.href='list';
 }

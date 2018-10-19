@@ -29,7 +29,7 @@ function join(){
 			{type:'button',value:'삭제',name:'btndel'}
 		]}]
 	var dxForm = new dhtmlXForm('dxForm',forms);
-	dxForm.attachEvent('onButtonClick',function(name){
+	dxForm.attachEvent('onButtonClick',function(name){	
 			if(name==btnup){
 				var id = dxForm.getItemValue('id');
 				 var pwd = dxForm.getItemValue('pwd');
