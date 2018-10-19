@@ -6,9 +6,8 @@
 	<meta charset="utf-8">
 	<title>스프링테스트</title>
 </head>
-
 <script>
-	/* var dxForm = new dhtmlXForm('dxForm',forms); */
+	
 	var loginFormData = [
 		 {type:'fieldset',name:'login',label:'login',inputWidth:'auto',
 			list:[
@@ -28,10 +27,12 @@
 	 var loginForm = new dhtmlXForm('loginForm',loginFormData);
 	 utsWin.window('w1').attachObject('loginForm');
 	 loginForm.attachEvent('onButtonClick',function(name){
-		 if(name=='loginbtn'){
+		 if(name=='loginbtn'){   
 			if(loginForm.validate()){
+
 				 var utid = loginForm.getItemValue('utid');
 				 var utpwd = loginForm.getItemValue('utpwd');
+
 				 var conf = {
 						 url:'/login',
 						 method:'POST',
@@ -42,6 +43,7 @@
 						 }
 				 }
 				 au.send(conf);
+				 
 			}
 		 }
 	 });

@@ -17,6 +17,7 @@ function join(){
 			{type:'password',name:'pwdcheck',label:'비밀번호확인',required:true},
 			{type:'input',name:'name',label:'이름',required:true},
 			{type:'input',name:'address',label:'주소',required:true},
+
 			{type:'calendar',name:'birthday',label:'생년월일',weekStart:'7',calendarDateFormat:'%Y%m%d',required:true},
 			{type:'label',label:'성별',list:[
 				{type:'radio',name:'gender',value:'1',label:'남자',checked:true,required:true},
@@ -61,5 +62,6 @@ window.addEventListener('load',join);
 </script>
 <body>
 <div id="dxForm" style="width:70%;height:70%"></div>
+
 </body>
 </html>
