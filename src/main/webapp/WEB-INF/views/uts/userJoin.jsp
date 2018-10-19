@@ -17,7 +17,8 @@ function join(){
 			{type:'password',name:'pwdcheck',label:'비밀번호확인',required:true},
 			{type:'input',name:'name',label:'이름',required:true},
 			{type:'input',name:'address',label:'주소',required:true},
-			{type:'calendar',name:'birthday',label:'생년월일',weekStart:'7',serverDateFormat:'yyyy-mm-dd',required:true},
+
+			{type:'calendar',name:'birthday',label:'생년월일',weekStart:'7',calendarDateFormat:'%Y%m%d',required:true},
 			{type:'label',label:'성별',list:[
 				{type:'radio',name:'gender',value:'1',label:'남자',checked:true,required:true},
 				{type:'radio',name:'gender',value:'2',label:'여자',required:true}]},
@@ -34,7 +35,7 @@ function join(){
 			 var pwdcheck =  dxForm.getItemValue('pwdcheck');
 			 var name = dxForm.getItemValue('name');
 			 var address = dxForm.getItemValue('address');
-			 var birthday = dxForm.getItemValue('birthday');
+			 var birthday = dxForm.getCalendar('birthday').getFormatedDate('%Y%m%d');
 			 var gender = dxForm.getItemValue('gender');
 			 var hobby = dxForm.getItemValue('hobby');
 			 var Recommender = dxForm.getItemValue('Recommender');
@@ -61,5 +62,6 @@ window.addEventListener('load',join);
 </script>
 <body>
 <div id="dxForm" style="width:70%;height:70%"></div>
+
 </body>
 </html>
