@@ -32,7 +32,6 @@
 
 				 var utid = loginForm.getItemValue('utid');
 				 var utpwd = loginForm.getItemValue('utpwd');
-
 				 var conf = {
 						 url:'http://192.168.0.25:3000/user/login',
 						 method:'POST',
@@ -43,7 +42,7 @@
 						 }
 				 }
 				 au.send(conf);
-				 
+				
 			}
 		 }
 	 });

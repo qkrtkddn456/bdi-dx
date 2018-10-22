@@ -8,7 +8,7 @@
 	</select>
 	<select id="selectUT" resultType="com.bdi.sp.vo.UT">
 		select * from user_table
-		where utnum=#{utnum}
+		where utid=#{utid}
 	</select>
 	<insert id="insertUT" parameterType="com.bdi.sp.vo.UT">
 		insert into user_table(utid,utpwd,utname,
