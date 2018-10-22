@@ -30,21 +30,17 @@ public class UTController {
 	public @ResponseBody List<UT> utList(@ModelAttribute UT ut){
 		return us.getUTList(ut);
 	}
-	@RequestMapping(value="/userGET/{utnum}",method=RequestMethod.GET)
-	public @ResponseBody UT ut(@PathVariable Integer utnum) {
-		return us.getUT(utnum);
-	}
 	@RequestMapping(value="/uts",method=RequestMethod.POST)
 	public @ResponseBody Map<String,String> insertUT(@RequestBody UT ut) {
 		return us.insertUT(ut);
 	}
-	@RequestMapping(value="/uts/{utnum}",method=RequestMethod.PUT)
-	public @ResponseBody int updateUT(@ModelAttribute UT ut, @PathVariable int utnum) {
-		return us.updateUT(ut, utnum);
+	@RequestMapping(value="/uts",method=RequestMethod.PUT)
+	public @ResponseBody Map<String,String> updateUT(@RequestBody UT ut) {
+		return us.updateUT(ut);
 	}
 	@RequestMapping(value="/uts/{utnum}",method=RequestMethod.DELETE)
-	public @ResponseBody int deleteUT(@PathVariable int utnum) {
-		return us.delete(utnum);
+	public @ResponseBody Map<String,String> deleteUT(@PathVariable int utnum) {
+		return us.deleteUT(utnum);
 	}
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public @ResponseBody Map<String,String> login(@RequestBody Map<String,String> ut){

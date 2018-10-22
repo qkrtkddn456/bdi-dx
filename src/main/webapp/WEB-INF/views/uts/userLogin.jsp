@@ -34,9 +34,9 @@
 				 var utpwd = loginForm.getItemValue('utpwd');
 
 				 var conf = {
-						 url:'/login',
+						 url:'http://192.168.0.25:3000/user/login',
 						 method:'POST',
-						 param : JSON.stringify({utid:utid,utpwd:utpwd}),
+						 param : JSON.stringify({uiEmail:utid,uiPwd:utpwd}),
 						 success : function(res){
 							 res = JSON.parse(res);
 							 alert(res.msg);

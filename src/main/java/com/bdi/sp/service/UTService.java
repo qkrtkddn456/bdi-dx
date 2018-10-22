@@ -10,7 +10,7 @@ public interface UTService {
 	public List<UT> getUTList(UT ut);
 	public UT getUT(Integer utnum);
 	public Map<String,String> insertUT(UT ut);
-	public int updateUT(UT ut, int utnum);
-	public int delete(int utnum);
+	public Map<String,String> updateUT(UT ut);
+	public Map<String,String> deleteUT(int utnum);
 	public Map<String,String> login(Map<String,String> ut);
 }

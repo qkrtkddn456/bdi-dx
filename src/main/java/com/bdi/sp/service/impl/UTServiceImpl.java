@@ -44,16 +44,27 @@ public class UTServiceImpl implements UTService {
 	}
 
 	@Override
-	public int updateUT(UT ut, int utnum) {
-		// TODO Auto-generated method stub
-		ut.setUtnum(utnum);
-		return udao.updateUT(ut);
+	public Map<String,String> updateUT(UT ut) {
+		Map<String,String> rMap = new HashMap<String,String>();
+		rMap.put("update", "fail");
+		rMap.put("msg", "업데이트 실패");
+		if(udao.updateUT(ut)==1) {
+			rMap.put("update", "success");
+			rMap.put("msg", "업데이트 성공");
+		}
+		return rMap;
 	}
 
 	@Override
-	public int delete(int utnum) {
-		// TODO Auto-generated method stub
-		return udao.deleteUT(utnum);
+	public Map<String,String> deleteUT(int utnum) {
+		Map<String,String> rMap = new HashMap<String,String>();
+		rMap.put("delete", "fail");
+		rMap.put("msg", "삭제 실패");
+		if(udao.deleteUT(utnum) == 1) {
+			rMap.put("delete", "success");
+			rMap.put("msg", "삭제성공");
+		}
+		return rMap;
 	}
 	
 	@Override
